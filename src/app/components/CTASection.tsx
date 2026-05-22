@@ -10,7 +10,7 @@ const contactCards = [
   { icon: Mail, title: "Email", value: "hello@nextleveldev.in" },
   { icon: Phone, title: "Phone", value: "+91 98765 43210" },
   { icon: MapPin, title: "Location", value: "Zirakpur, Punjab, India" },
-];
+];  
 
 export function CTASection({ darkMode }: CTASectionProps) {
   const ref = useRef(null);
