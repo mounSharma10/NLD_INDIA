@@ -1,0 +1,180 @@
+import { useEffect, useState } from "react";
+import { motion } from "motion/react";
+import { ArrowRight, Play } from "lucide-react";
+
+interface HeroProps {
+  darkMode: boolean;
+}
+
+const floatingDots = [
+  { left: "10%", top: "16%" },
+  { left: "17%", top: "27%" },
+  { left: "25%", top: "38%" },
+  { left: "32%", top: "48%" },
+  { left: "40%", top: "57%" },
+  { left: "62%", top: "23%" },
+  { left: "69%", top: "36%" },
+  { left: "77%", top: "48%" },
+  { left: "84%", top: "56%" },
+  { left: "92%", top: "68%" },
+  { left: "55%", top: "80%" },
+];
+
+export function HeroSection({ darkMode }: HeroProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const scrollToServices = () => {
+    document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToCTA = () => {
+    document.querySelector("#cta")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <section
+      id="about"
+      className={`relative min-h-screen overflow-hidden px-6 pt-28 ${
+        darkMode ? "bg-[#08111f]" : "bg-[#f6f4fb]"
+      }`}
+    >
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div
+          className={`absolute inset-0 ${
+            darkMode
+              ? "bg-[radial-gradient(circle_at_20%_20%,rgba(147,51,234,0.14),transparent_28%),radial-gradient(circle_at_72%_38%,rgba(59,130,246,0.12),transparent_30%),radial-gradient(circle_at_50%_60%,rgba(14,165,233,0.08),transparent_35%)]"
+              : "bg-[radial-gradient(circle_at_18%_22%,rgba(168,85,247,0.14),transparent_28%),radial-gradient(circle_at_74%_42%,rgba(96,165,250,0.14),transparent_30%),radial-gradient(circle_at_50%_58%,rgba(125,211,252,0.14),transparent_35%)]"
+          }`}
+        />
+        <div
+          className={`absolute inset-0 ${darkMode ? "opacity-[0.08]" : "opacity-[0.07]"}`}
+          style={{
+            backgroundImage: `linear-gradient(${darkMode ? "rgba(255,255,255,0.75)" : "rgba(99,102,241,0.28)"} 1px, transparent 1px), linear-gradient(90deg, ${darkMode ? "rgba(255,255,255,0.75)" : "rgba(99,102,241,0.28)"} 1px, transparent 1px)`,
+            backgroundSize: "58px 58px",
+          }}
+        />
+        <div
+          className={`absolute left-1/2 top-1/2 h-[680px] w-[680px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px] ${
+            darkMode ? "bg-sky-500/10" : "bg-sky-300/26"
+          }`}
+        />
+
+        {mounted &&
+          floatingDots.map((dot, index) => (
+            <motion.div
+              key={`${dot.left}-${dot.top}`}
+              className={`absolute h-2 w-2 rounded-full ${darkMode ? "bg-violet-300/70" : "bg-violet-400/70"}`}
+              style={{ left: dot.left, top: dot.top }}
+              animate={{ y: [-6, 8, -6], opacity: [0.35, 0.9, 0.35] }}
+              transition={{ duration: 3.2 + index * 0.18, repeat: Infinity, ease: "easeInOut" }}
+            />
+          ))}
+      </div>
+
+      <div className="relative mx-auto flex min-h-[calc(100vh-7rem)] max-w-7xl flex-col items-center justify-center pb-24 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 26 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-4xl"
+        >
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+            className={`text-6xl font-black tracking-[-0.07em] sm:text-7xl md:text-8xl lg:text-[8rem] ${
+              darkMode ? "text-white" : "text-slate-900"
+            }`}
+            style={{ fontFamily: "'Space Grotesk', 'Manrope', sans-serif" }}
+          >
+            <span className="bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent">
+              NLD India
+            </span>
+          </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0.7 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ duration: 0.7, delay: 0.18 }}
+            className="mx-auto mt-4 h-1 w-40 rounded-full bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-500"
+          />
+
+          <motion.p
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.24 }}
+            className={`mx-auto mt-6 max-w-4xl text-lg leading-9 md:text-[1.05rem] ${
+              darkMode ? "text-slate-300" : "text-slate-600"
+            }`}
+          >
+            We craft <span className={darkMode ? "font-bold text-white" : "font-bold text-slate-900"}>premium digital experiences</span> from
+            blazing-fast web apps and AI-powered solutions to stunning mobile products that elevate your business to the next level.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.34 }}
+            className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          >
+            <motion.button
+              whileHover={{ y: -2, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={scrollToCTA}
+              className="inline-flex min-w-[226px] items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 via-blue-500 to-cyan-500 px-8 py-4 text-base font-bold text-white shadow-[0_20px_40px_rgba(59,130,246,0.22)]"
+            >
+              Start Your Project
+              <ArrowRight size={18} />
+            </motion.button>
+
+            <motion.button
+              whileHover={{ y: -2, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={scrollToServices}
+              className={`inline-flex min-w-[214px] items-center justify-center gap-3 rounded-2xl border px-8 py-4 text-base font-bold ${
+                darkMode
+                  ? "border-white/12 bg-white/[0.04] text-white hover:bg-white/[0.08]"
+                  : "border-slate-200 bg-white/70 text-slate-700 shadow-sm hover:bg-white"
+              }`}
+            >
+              <span
+                className={`flex h-8 w-8 items-center justify-center rounded-full ${
+                  darkMode ? "bg-white/10" : "bg-slate-100"
+                }`}
+              >
+                <Play size={12} className={darkMode ? "fill-white text-white" : "fill-slate-700 text-slate-700"} />
+              </span>
+              See Our Work
+            </motion.button>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9 }}
+          className="absolute bottom-7 left-1/2 -translate-x-1/2"
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+            className={`flex flex-col items-center gap-4 ${darkMode ? "text-slate-500" : "text-slate-400"}`}
+          >
+            <span className="text-xs font-semibold uppercase tracking-[0.28em]">Scroll</span>
+            <div
+              className={`flex h-10 w-6 items-start justify-center rounded-full border pt-1 ${
+                darkMode ? "border-white/16" : "border-slate-300"
+              }`}
+            >
+              <div className={`h-2.5 w-1 rounded-full ${darkMode ? "bg-slate-400" : "bg-slate-500"}`} />
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
