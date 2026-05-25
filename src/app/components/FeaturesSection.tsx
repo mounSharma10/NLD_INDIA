@@ -107,7 +107,7 @@ export function FeaturesSection({ darkMode }: FeaturesSectionProps) {
 
             <div className="space-y-6">
               <p className={`text-base md:text-lg leading-8 ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
-                Founded at 2023, <span className={darkMode ? "text-white font-semibold" : "text-gray-900 font-semibold"}>NLD India Software Pvt. Ltd.</span> has steadily evolved from a promising startup into a growing and well-structured IT solutions company with a team of around 20 skilled professionals. Headquartered in Zirakpur (Mohali), the company has established streamlined workflows and a collaborative work culture that emphasizes both high-quality software delivery and a healthy work-life balance.
+                Founded in 2023, <span className={darkMode ? "text-white font-semibold" : "text-gray-900 font-semibold"}>NLD India Software Pvt. Ltd.</span> has steadily evolved from a promising startup into a growing and well-structured IT solutions company with a team of around 20 skilled professionals. Headquartered in Zirakpur (Mohali), the company has established streamlined workflows and a collaborative work culture that emphasizes both high-quality software delivery and a healthy work-life balance.
               </p>
 
               <p className={`text-base md:text-lg leading-8 ${darkMode ? "text-gray-300" : "text-gray-600"}`}>

@@ -7,7 +7,7 @@ interface CTASectionProps {
 }
 
 const contactCards = [
-  { icon: Mail, title: "Email", value: "hello@nextleveldev.in" },
+  { icon: Mail, title: "Email", value: "p.bhalla@nldinternational.com" },
   { icon: Phone, title: "Phone", value: "+01762 459 012" },
   { icon: MapPin, title: "Location", value: " First Floor, Royale Estate Complex, Sco 40, near Oxford Street, Zirakpur, Punjab 140603" },
 ];  
@@ -188,8 +188,8 @@ export function CTASection({ darkMode }: CTASectionProps) {
                   className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 px-6 py-4 text-sm font-bold text-white shadow-lg shadow-cyan-500/25 transition-all duration-300"
                 >
                   <Send size={16} />
-                  Send project inquiry
-                  <ArrowRight size={16} />
+                  Send inquiry
+         
                 </motion.button>
               </form>
             )}
