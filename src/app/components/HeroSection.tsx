@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Braces, Cpu, Database, Play, Workflow } from "lucide-react";
 
 interface HeroProps {
   darkMode: boolean;
@@ -18,6 +18,13 @@ const floatingDots = [
   { left: "84%", top: "56%" },
   { left: "92%", top: "68%" },
   { left: "55%", top: "80%" },
+];
+
+const techOrbitItems = [
+  { icon: Workflow,  left: "8%", top: "24%", delay: 0.2 },
+  { icon: Braces,  left: "74%", top: "18%", delay: 0.6 },
+  { icon: Cpu,  left: "76%", top: "64%", delay: 0.4 },
+  { icon: Database,  left: "12%", top: "68%", delay: 0.8 },
 ];
 
 export function HeroSection({ darkMode }: HeroProps) {
@@ -62,6 +69,29 @@ export function HeroSection({ darkMode }: HeroProps) {
             darkMode ? "bg-sky-500/10" : "bg-sky-300/26"
           }`}
         />
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+          className={`absolute left-1/2 top-1/2 hidden h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed lg:block ${
+            darkMode ? "border-cyan-400/10" : "border-cyan-500/14"
+          }`}
+        />
+        <motion.div
+          animate={{ rotate: -360 }}
+          transition={{ duration: 34, repeat: Infinity, ease: "linear" }}
+          className={`absolute left-1/2 top-1/2 hidden h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border lg:block ${
+            darkMode ? "border-violet-400/10" : "border-violet-500/12"
+          }`}
+        />
+        <motion.div
+          animate={{ x: ["-12%", "12%", "-12%"], opacity: [0.18, 0.42, 0.18] }}
+          transition={{ duration: 7.5, repeat: Infinity, ease: "easeInOut" }}
+          className={`absolute left-1/2 top-1/2 hidden h-[340px] w-[2px] -translate-x-1/2 -translate-y-1/2 lg:block ${
+            darkMode
+              ? "bg-gradient-to-b from-transparent via-cyan-300/50 to-transparent"
+              : "bg-gradient-to-b from-transparent via-cyan-500/35 to-transparent"
+          }`}
+        />
 
         {mounted &&
           floatingDots.map((dot, index) => (
@@ -76,6 +106,48 @@ export function HeroSection({ darkMode }: HeroProps) {
       </div>
 
       <div className="relative mx-auto flex min-h-[calc(100vh-7rem)] max-w-7xl flex-col items-center justify-center pb-24 text-center">
+        <div className="pointer-events-none absolute inset-0 hidden lg:block">
+          {techOrbitItems.map(({ icon: Icon,  left, top, delay }, index) => (
+            <motion.div
+              key={`${left}-${top}`}
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{
+                opacity: 1,
+                x: [0, index % 2 === 0 ? 14 : -14, 0],
+                y: [0, index % 2 === 0 ? -10 : 10, 0],
+              }}
+              transition={{
+                opacity: { duration: 0.6, delay },
+                x: { duration: 6 + index, repeat: Infinity, ease: "easeInOut", delay },
+                y: { duration: 5.5 + index * 0.6, repeat: Infinity, ease: "easeInOut", delay },
+              }}
+              style={{ left, top }}
+              className={`absolute rounded-[24px] border px-3 py-3 backdrop-blur-md ${
+                darkMode
+                  ? "border-white/10 bg-white/[0.05] text-slate-200 shadow-[0_12px_40px_rgba(15,23,42,0.28)]"
+                  : "border-white/80 bg-white/70 text-slate-700 shadow-[0_14px_40px_rgba(59,130,246,0.12)]"
+              }`}
+            >
+              <div className="flex items-center gap-2.5">
+                <span
+                  className={`flex h-9 w-9 items-center justify-center rounded-2xl ${
+                    darkMode ? "bg-cyan-400/10 text-cyan-200" : "bg-cyan-500/10 text-cyan-700"
+                  }`}
+                >
+                  <Icon size={16} />
+                </span>
+                {/* <span
+                  className={`rounded-full px-2.5 py-1 text-[11px] font-bold tracking-[0.24em] ${
+                    darkMode ? "bg-white/8 text-slate-300" : "bg-slate-900/[0.06] text-slate-500"
+                  }`}
+                >
+                  {accent}
+                </span> */}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
