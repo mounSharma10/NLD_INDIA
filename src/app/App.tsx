@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import { Navbar } from "./components/Navbar";
 import { HeroSection } from "./components/HeroSection";
-import { StatsSection } from "./components/StatsSection";
 import { FeaturesSection } from "./components/FeaturesSection";
 import { ServicesSection } from "./components/ServicesSection";
 import { ShowcaseSection } from "./components/ShowcaseSection";
 import { TechStackSection } from "./components/TechStackSection";
 import { HiringSection } from "./components/HiringSection";
 import { CompanyGallerySection } from "./components/CompanyGallerySection";
-import { TestimonialsSection } from "./components/TestimonialsSection";
 import { FAQSection } from "./components/FAQSection";
 import { CTASection } from "./components/CTASection";
 import { Footer } from "./components/Footer";
@@ -33,15 +31,13 @@ export default function App() {
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <main>
           <HeroSection darkMode={darkMode} />
-          {/* <StatsSection darkMode={darkMode} /> */}
           <FeaturesSection darkMode={darkMode} />
           <ServicesSection darkMode={darkMode} />
           <ShowcaseSection darkMode={darkMode} />
           <TechStackSection darkMode={darkMode} />
           <HiringSection darkMode={darkMode} />
           <CompanyGallerySection darkMode={darkMode} />
-          {/* <TestimonialsSection darkMode={darkMode} /> */}
-          {/* <FAQSection darkMode={darkMode} /> */}
+          <FAQSection darkMode={darkMode} />
           <CTASection darkMode={darkMode} />
         </main>
         <Footer darkMode={darkMode} />

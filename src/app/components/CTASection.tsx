@@ -8,8 +8,8 @@ interface CTASectionProps {
 
 const contactCards = [
   { icon: Mail, title: "Email", value: "hello@nextleveldev.in" },
-  { icon: Phone, title: "Phone", value: "+91 98765 43210" },
-  { icon: MapPin, title: "Location", value: "Zirakpur, Punjab, India" },
+  { icon: Phone, title: "Phone", value: "+01762 459 012" },
+  { icon: MapPin, title: "Location", value: " First Floor, Royale Estate Complex, Sco 40, near Oxford Street, Zirakpur, Punjab 140603" },
 ];  
 
 export function CTASection({ darkMode }: CTASectionProps) {
@@ -81,7 +81,7 @@ export function CTASection({ darkMode }: CTASectionProps) {
             transition={{ delay: 0.18 }}
             className={`mt-5 text-base leading-8 md:text-lg ${darkMode ? "text-slate-300" : "text-slate-600"}`}
           >
-          share yur career with us.
+         Share your details, experience, and the role you're interested in.
           </motion.p>
         </div>
 
@@ -138,8 +138,8 @@ export function CTASection({ darkMode }: CTASectionProps) {
 
                 <div className="grid gap-4 md:grid-cols-2">
                   {[
-                    { key: "name", label: "Your Name", placeholder: "Rahul Sharma", type: "text" },
-                    { key: "email", label: "Email Address", placeholder: "rahul@company.com", type: "email" },
+                    { key: "name", label: "Your Name", placeholder: "Monu Sharma", type: "text" },
+                    { key: "email", label: "Email Address", placeholder: "monu@company.com", type: "email" },
                   ].map((field) => (
                     <div key={field.key}>
                       <label className={`mb-2 block text-xs font-semibold uppercase tracking-[0.2em] ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
@@ -167,7 +167,7 @@ export function CTASection({ darkMode }: CTASectionProps) {
                   </label>
                   <textarea
                     required
-                    placeholder="Website redesign, AI workflow, mobile app, hiring microsite, or something bigger."
+                    placeholder="Ask your questions. We’d love to answer your questions."
                     value={form.project}
                     onChange={(e) => setForm({ ...form, project: e.target.value })}
                     rows={5}
