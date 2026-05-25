@@ -14,7 +14,8 @@ const navLinks = [
   { label: "Portfolio", href: "#showcase" },
   { label: "Tech Stack", href: "#techstack" },
   { label: "Hiring", href: "#hiring" },
-  // { label: "FAQ", href: "#faq" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Contact", href: "#cta" },
 ];
 
 export function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {

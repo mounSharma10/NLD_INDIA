@@ -44,7 +44,7 @@ export function HeroSection({ darkMode }: HeroProps) {
 
   return (
     <section
-      id="about"
+      id="hero"
       className={`relative min-h-screen overflow-hidden px-6 pt-28 ${
         darkMode ? "bg-[#08111f]" : "bg-[#f6f4fb]"
       }`}
