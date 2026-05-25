@@ -63,7 +63,7 @@ const techCategories = [
     glow: "rgba(234,179,8,0.15)",
     techs: [
       { name: "PostgreSQL", icon: "🐘" },
-      { name: "MongoDB", icon: "🍃" },
+      // { name: "MongoDB", icon: "🍃" },
       { name: "MySQL", icon: "🐬" },
       { name: "Redis", icon: "🔴" },
       // { name: "Firebase", icon: "🔥" },
