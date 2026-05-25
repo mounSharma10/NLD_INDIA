@@ -193,7 +193,7 @@ export function HeroSection({ darkMode }: HeroProps) {
             transition={{ duration: 0.7, delay: 0.34 }}
             className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-            <motion.button
+            {/* <motion.button
               whileHover={{ y: -2, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={scrollToCTA}
@@ -201,7 +201,7 @@ export function HeroSection({ darkMode }: HeroProps) {
             >
               Start Your Project
               <ArrowRight size={18} />
-            </motion.button>
+            </motion.button> */}
 
             <motion.button
               whileHover={{ y: -2, scale: 1.02 }}
