@@ -20,12 +20,12 @@ const floatingDots = [
   { left: "55%", top: "80%" },
 ];
 
-const techOrbitItems = [
-  { icon: Workflow,  left: "8%", top: "24%", delay: 0.2 },
-  { icon: Braces,  left: "74%", top: "18%", delay: 0.6 },
-  { icon: Cpu,  left: "76%", top: "64%", delay: 0.4 },
-  { icon: Database,  left: "12%", top: "68%", delay: 0.8 },
-];
+// const techOrbitItems = [
+//   { icon: Workflow,  left: "8%", top: "24%", delay: 0.2 },
+//   { icon: Braces,  left: "74%", top: "18%", delay: 0.6 },
+//   { icon: Cpu,  left: "76%", top: "64%", delay: 0.4 },
+//   { icon: Database,  left: "12%", top: "68%", delay: 0.8 },
+// ];
 
 export function HeroSection({ darkMode }: HeroProps) {
   const [mounted, setMounted] = useState(false);
@@ -106,7 +106,7 @@ export function HeroSection({ darkMode }: HeroProps) {
       </div>
 
       <div className="relative mx-auto flex min-h-[calc(100vh-7rem)] max-w-7xl flex-col items-center justify-center pb-24 text-center">
-        <div className="pointer-events-none absolute inset-0 hidden lg:block">
+        {/* <div className="pointer-events-none absolute inset-0 hidden lg:block">
           {techOrbitItems.map(({ icon: Icon,  left, top, delay }, index) => (
             <motion.div
               key={`${left}-${top}`}
@@ -136,17 +136,17 @@ export function HeroSection({ darkMode }: HeroProps) {
                 >
                   <Icon size={16} />
                 </span>
-                {/* <span
+                <span
                   className={`rounded-full px-2.5 py-1 text-[11px] font-bold tracking-[0.24em] ${
                     darkMode ? "bg-white/8 text-slate-300" : "bg-slate-900/[0.06] text-slate-500"
                   }`}
                 >
                   {accent}
-                </span> */}
+                </span>
               </div>
             </motion.div>
           ))}
-        </div>
+        </div> */}
 
         <motion.div
           initial={{ opacity: 0, y: 26 }}

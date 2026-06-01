@@ -37,7 +37,7 @@ export default function App() {
           <TechStackSection darkMode={darkMode} />
           <HiringSection darkMode={darkMode} />
           <CompanyGallerySection darkMode={darkMode} />
-          <FAQSection darkMode={darkMode} />
+          {/* <FAQSection darkMode={darkMode} /> */}
           <CTASection darkMode={darkMode} />
         </main>
         <Footer darkMode={darkMode} />

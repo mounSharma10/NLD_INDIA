@@ -12,10 +12,10 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#showcase" },
-  { label: "Tech Stack", href: "#techstack" },
+  { label: "Stack", href: "#techstack" },
   { label: "Hiring", href: "#hiring" },
   { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#cta" },
+  // { label: "Contact", href: "#cta" },
 ];
 
 export function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
