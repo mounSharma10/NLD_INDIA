@@ -28,16 +28,13 @@ export function Footer({ darkMode }: FooterProps) {
                   <img src={logoImage} alt="NLD India logo" className="relative h-12 w-12 object-contain" />
                 </div>
                 <div>
-                  <div className={`text-lg font-bold ${darkMode ? "text-white" : "text-slate-950"}`}>NLD India Software Pvt. Ltd.</div>
-                  <div className={`text-[11px] uppercase tracking-[0.28em] ${darkMode ? "text-slate-500" : "text-slate-400"}`}>
-                    Premium software systems
-                  </div>
+                  <div className={`text-lg font-bold ${darkMode ? "text-white" : "text-slate-950"}`}>NLD India Software Pvt. Ltd.</div>                
                 </div>
               </div>
 
               <p className={`mt-5 text-sm leading-7 ${darkMode ? "text-slate-300" : "text-slate-600"}`}>
                 We create premium digital products, AI workflows, and operational platforms for teams that care about
-                speed, quality, and long-term trust.
+                 quality, and long-term trust.
               </p>
             </div>
 

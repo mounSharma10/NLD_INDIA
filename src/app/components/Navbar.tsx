@@ -61,17 +61,17 @@ export function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
               </div> */}
               <div>
                 <span
-                  className={`font-bold text-base tracking-tight ${darkMode ? "text-white" : "text-slate-900"}`}
+                  className={`font-bold text-base tracking-tight ${darkMode ? "text-white" : "text-slate-900"} mx-auto  mt-4 sm:mt-6  max-w-xs sm:max-w-2xl lg:max-w-4xl  text-sm sm:text-base md:text-lg lg:text-[1.05rem]  leading-7 sm:leading-8 md:leading-9`}
                   style={{ fontFamily: "'Space Grotesk', 'Manrope', sans-serif" }}
                 >
-                 NLD 
+                 NLD India Software Pvt Ltd
                 </span>
-                <span
+                {/* <span
                   className="bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent font-bold text-base tracking-tight"
                   style={{ fontFamily: "'Space Grotesk', 'Manrope', sans-serif" }}
                 >
                   {" "}India
-                </span>
+                </span> */}
                 {/* <div className={`text-[10px] font-medium tracking-widest uppercase ${darkMode ? "text-gray-400" : "text-gray-500"}`}>
                   India
                 </div> */}

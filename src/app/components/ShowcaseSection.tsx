@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "motion/react";
-import { ArrowRight, FileText, ShoppingCart, FolderOpen, Ship, CheckSquare, Mail, Package } from "lucide-react";
+import { ArrowRight, FileText, ShoppingCart, FolderOpen, Ship, CheckSquare, Mail, Package, ScanText } from "lucide-react";
 
 interface ShowcaseSectionProps {
   darkMode: boolean;
@@ -79,24 +79,25 @@ const projects = [
     ],
     chips: ["Shipping", "Document Processing", "Logistics", "Automation"],
   },
-  {
-    id: "vp",
-    name: "VP",
-    tagline: "Validation Portal",
-    icon: CheckSquare,
-    category: "AI · Human Validation",
-    gradient: "from-yellow-500 to-orange-500",
-    accentBg: "rgba(234,179,8,0.08)",
-    accentBorder: "rgba(234,179,8,0.25)",
-    description:
-      "A Validation Portal where documents received from Fluentia are reviewed and validated by human operators — bridging AI-based data extraction with human accuracy verification.",
-    points: [
-      { label: "AI Data Extraction", detail: "Documents like invoices undergo AI-based extraction in the Capture Platform." },
-      { label: "Human Validation", detail: "Validators verify AI-generated output for accuracy, reliability, and completeness." },
-      { label: "Downstream Ready", detail: "Verified data is ready for further processing or downstream use in operations." },
-    ],
-    chips: ["AI Validation", "Human-in-loop", "Invoices", "Quality Control"],
-  },
+{
+id: "cp",
+name: "Capture Platform",
+tagline: "Capture Platform",
+icon: ScanText,
+category: "AI · Data Extraction",
+gradient: "from-blue-500 to-cyan-500",
+accentBg: "rgba(59,130,246,0.08)",
+accentBorder: "rgba(59,130,246,0.25)",
+description:
+"A Capture Platform where documents are processed using AI to automatically extract structured data from invoices, forms, and business documents — reducing manual effort and improving processing speed.",
+points: [
+{ label: "AI Document Processing", detail: "Invoices and business documents are uploaded and analyzed using AI-powered extraction models." },
+{ label: "Smart Data Extraction", detail: "Key fields such as invoice numbers, dates, vendor details, and amounts are extracted automatically." },
+{ label: "Structured Output", detail: "Extracted data is converted into structured formats ready for validation, storage, or downstream systems." },
+],
+chips: ["AI Extraction", "OCR", "Invoices", "Automation"],
+},
+
   {
     id: "immotion",
     name: "Immotion",

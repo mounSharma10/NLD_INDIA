@@ -19,16 +19,6 @@ const services = [
   },
   {
     number: "02",
-    icon: Smartphone,
-    title: "Mobile Experiences",
-    category: "Apps",
-    desc: "Native-feeling iOS and Android apps with polished interaction design, reliable performance, and thoughtful onboarding flows.",
-    tags: ["React Native", "Flutter", "Expo", "App Store Ops"],
-    gradient: "from-cyan-500 via-sky-500 to-blue-500",
-    accent: "rgba(56,189,248,0.16)",
-  },
-  {
-    number: "03",
     icon: Brain,
     title: "AI Products",
     category: "Intelligence",
@@ -38,7 +28,30 @@ const services = [
     accent: "rgba(16,185,129,0.16)",
   },
   {
-    number: "04",
+    number: "03",
+    icon: Palette,
+    title: "Brand-Led UI/UX",
+    category: "Design",
+    desc: "Distinctive interfaces and design systems that sharpen positioning, improve trust, and make products feel undeniably premium.",
+    tags: ["Figma", "Motion", "Design Systems", "UX Research"],
+    gradient: "from-orange-400 via-rose-500 to-pink-500",
+    accent: "rgba(251,113,133,0.14)",
+  },
+];
+
+const upcomingServices = [
+  {
+    number: "01",
+    icon: Smartphone,
+    title: "Mobile Experiences",
+    category: "Apps",
+    desc: "Native-feeling iOS and Android apps with polished interaction design, reliable performance, and thoughtful onboarding flows.",
+    tags: ["React Native", "Flutter", "Expo", "App Store Ops"],
+    gradient: "from-cyan-500 via-sky-500 to-blue-500",
+    accent: "rgba(56,189,248,0.16)",
+  },
+  {
+    number: "02",
     icon: Cloud,
     title: "Cloud Systems",
     category: "Scale",
@@ -48,17 +61,7 @@ const services = [
     accent: "rgba(59,130,246,0.16)",
   },
   {
-    number: "05",
-    icon: Palette,
-    title: "Brand-Led UI/UX",
-    category: "Design",
-    desc: "Distinctive interfaces and design systems that sharpen positioning, improve trust, and make products feel undeniably premium.",
-    tags: ["Figma", "Motion", "Design Systems", "UX Research"],
-    gradient: "from-orange-400 via-rose-500 to-pink-500",
-    accent: "rgba(251,113,133,0.14)",
-  },
-  {
-    number: "06",
+    number: "03",
     icon: BarChart3,
     title: "Analytics Layers",
     category: "Insights",
@@ -68,6 +71,8 @@ const services = [
     accent: "rgba(168,85,247,0.14)",
   },
 ];
+
+type ServiceItem = typeof services[number];
 
 export function ServicesSection({ darkMode }: ServicesSectionProps) {
   const headerRef = useRef(null);
@@ -144,15 +149,80 @@ export function ServicesSection({ darkMode }: ServicesSectionProps) {
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service, index) => (
-            <ServiceCard key={service.number} service={service} index={index} darkMode={darkMode} />
+            <ServiceCard
+              key={service.number}
+              service={service}
+              index={index}
+              darkMode={darkMode}
+              status="live"
+            />
           ))}
+        </div>
+
+        <div
+          className={`mt-16 rounded-[32px] border p-6 md:p-8 ${
+            darkMode ? "border-white/10 bg-white/[0.03]" : "border-slate-200 bg-white/80 shadow-sm"
+          }`}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ delay: 0.22 }}
+            className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"
+          >
+            <div>
+              <div
+                className={`mb-3 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] ${
+                  darkMode
+                    ? "border-white/12 bg-white/[0.04] text-emerald-200"
+                    : "border-emerald-200 bg-white text-emerald-700 shadow-sm"
+                }`}
+              >
+                <Sparkles size={13} />
+                Upcoming Services
+              </div>
+              <h3
+                className={`text-2xl font-black tracking-[-0.03em] md:text-4xl ${darkMode ? "text-white" : "text-slate-950"}`}
+                style={{ fontFamily: "'Space Grotesk', 'Manrope', sans-serif" }}
+              >
+                More capabilities, same service quality.
+              </h3>
+            </div>
+
+            <p className={`max-w-2xl text-sm leading-7 md:text-base ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
+              These are planned offerings already shaped into the same productized format, so they read like real
+              services instead of placeholders.
+            </p>
+          </motion.div>
+
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {upcomingServices.map((service, index) => (
+              <ServiceCard
+                key={`upcoming-${service.number}`}
+                service={service}
+                index={services.length + index}
+                darkMode={darkMode}
+                status="upcoming"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function ServiceCard({ service, index, darkMode }: { service: typeof services[0]; index: number; darkMode: boolean }) {
+function ServiceCard({
+  service,
+  index,
+  darkMode,
+  status,
+}: {
+  service: ServiceItem;
+  index: number;
+  darkMode: boolean;
+  status: "live" | "upcoming";
+}) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const Icon = service.icon;
@@ -201,12 +271,16 @@ function ServiceCard({ service, index, darkMode }: { service: typeof services[0]
 
           <div
             className={`flex h-10 w-10 items-center justify-center rounded-2xl transition-all duration-300 ${
-              darkMode
-                ? "bg-white/8 text-slate-300 group-hover:bg-white/14 group-hover:text-white"
-                : "bg-slate-100 text-slate-500 group-hover:bg-slate-900 group-hover:text-white"
+              status === "upcoming"
+                ? darkMode
+                  ? "bg-emerald-500/12 text-emerald-200 group-hover:bg-emerald-500/18"
+                  : "bg-emerald-50 text-emerald-700 group-hover:bg-emerald-100"
+                : darkMode
+                  ? "bg-white/8 text-slate-300 group-hover:bg-white/14 group-hover:text-white"
+                  : "bg-slate-100 text-slate-500 group-hover:bg-slate-900 group-hover:text-white"
             }`}
           >
-            <ArrowUpRight size={17} />
+            {status === "upcoming" ? <Sparkles size={17} /> : <ArrowUpRight size={17} />}
           </div>
         </div>
 
@@ -217,6 +291,18 @@ function ServiceCard({ service, index, darkMode }: { service: typeof services[0]
           {service.title}
         </h3>
         <p className={`mb-6 text-sm leading-7 ${darkMode ? "text-slate-300" : "text-slate-600"}`}>{service.desc}</p>
+
+        {status === "upcoming" ? (
+          <div className="mb-5">
+            <span
+              className={`inline-flex rounded-full px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] ${
+                darkMode ? "bg-emerald-500/10 text-emerald-200" : "bg-emerald-50 text-emerald-700"
+              }`}
+            >
+              Coming Soon
+            </span>
+          </div>
+        ) : null}
 
         <div className="flex flex-wrap gap-2">
           {service.tags.map((tag) => (
