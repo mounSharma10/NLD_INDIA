@@ -163,7 +163,7 @@ export function CTASection({ darkMode }: CTASectionProps) {
 
                 <div>
                   <label className={`mb-2 block text-xs font-semibold uppercase tracking-[0.2em] ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
-                    Project Brief
+                    Ask your inquiry
                   </label>
                   <textarea
                     required
@@ -178,9 +178,6 @@ export function CTASection({ darkMode }: CTASectionProps) {
                     }`}
                   />
                 </div>
-
-          
-
                 <motion.button
                   whileHover={{ scale: 1.02, y: -1 }}
                   whileTap={{ scale: 0.98 }}

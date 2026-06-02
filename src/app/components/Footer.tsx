@@ -7,9 +7,9 @@ interface FooterProps {
 }
 
 const links = [
+  { label: "Home", href: "#hero" },
   { label: "Services", href: "#services" },
   { label: "Portfolio", href: "#showcase" },
-  { label: "AI Solutions", href: "#ai-solutions" },
   { label: "Contact", href: "#cta" },
 ];
 
