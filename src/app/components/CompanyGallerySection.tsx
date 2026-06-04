@@ -63,7 +63,7 @@ export function CompanyGallerySection({ darkMode }: CompanyGallerySectionProps) 
       </div>
 
       <div ref={ref} className="relative mx-auto max-w-7xl">
-        <div className="mb-14 max-w-3xl">
+        <div className="mb-14 text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -74,7 +74,7 @@ export function CompanyGallerySection({ darkMode }: CompanyGallerySectionProps) 
             }`}
           >
             <Camera size={13} />
-            Company Gallery
+            Life at NLD India
           </motion.div>
 
           <motion.h2
@@ -92,7 +92,7 @@ export function CompanyGallerySection({ darkMode }: CompanyGallerySectionProps) 
             </span>
           </motion.h2>
 
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 14 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.16 }}
@@ -100,7 +100,7 @@ export function CompanyGallerySection({ darkMode }: CompanyGallerySectionProps) 
           >
             The gallery uses an editorial-style collage so the culture section feels designed, not decorative. It gives
             the hiring story and company personality more presence on the page.
-          </motion.p>
+          </motion.p> */}
         </div>
 
         <div className="grid grid-cols-1 auto-rows-[220px] gap-5 md:grid-cols-3">

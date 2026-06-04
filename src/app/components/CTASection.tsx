@@ -46,7 +46,7 @@ export function CTASection({ darkMode }: CTASectionProps) {
       </div>
 
       <div ref={ref} className="relative mx-auto max-w-7xl">
-        <div className="mb-14 max-w-3xl">
+        <div className="mb-14 text-center">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -75,14 +75,14 @@ export function CTASection({ darkMode }: CTASectionProps) {
             </span> */}
           </motion.h2>
 
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.18 }}
             className={`mt-5 text-base leading-8 md:text-lg ${darkMode ? "text-slate-300" : "text-slate-600"}`}
           >
          Share your details, experience, and the role you're interested in.
-          </motion.p>
+          </motion.p> */}
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
