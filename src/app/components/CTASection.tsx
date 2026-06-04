@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { ArrowRight, CheckCircle, Mail, MapPin, Phone, Send, Sparkles } from "lucide-react";
 
@@ -17,11 +17,44 @@ export function CTASection({ darkMode }: CTASectionProps) {
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", project: "", budget: "" });
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const handleSubmit = async (
+    e: React.SyntheticEvent<HTMLFormElement>
+) => {
+  e.preventDefault();
+  setSubmitted(true);
+
+  setLoading(true);
+  setResult("");
+
+  const formData = new FormData(e.currentTarget);
+
+  formData.append(
+    "access_key",
+    "14542173-fa71-43d7-ae12-46377af7f8d1"
+  );
+
+  const response = await fetch(
+    "https://api.web3forms.com/submit",
+    {
+      method: "POST",
+      body: formData,
+    }
+  );
+
+  const data = await response.json();
+
+  if (data.success) {
+    setResult("Inquiry sent successfully!");
+    e.currentTarget.reset();
+  } else {
+    setResult("Failed to send inquiry.");
+  }
+
+  setLoading(false);
+};
 
   return (
     <section
@@ -138,15 +171,16 @@ export function CTASection({ darkMode }: CTASectionProps) {
 
                 <div className="grid gap-4 md:grid-cols-2">
                   {[
-                    { key: "name", label: "Your Name", placeholder: "Monu Sharma", type: "text" },
-                    { key: "email", label: "Email Address", placeholder: "monu@company.com", type: "email" },
+                    { key: "name", label: "Your Name", placeholder: "Monu Sharma", type: "text" , name: true},
+                    { key: "email", label: "Email Address", placeholder: "monu@company.com", type: "email" , email: true},
                   ].map((field) => (
                     <div key={field.key}>
                       <label className={`mb-2 block text-xs font-semibold uppercase tracking-[0.2em] ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
                         {field.label}
                       </label>
                       <input
-                        type={field.type}
+                          type={field.type}
+                          name={field.key}
                         required
                         placeholder={field.placeholder}
                         value={form[field.key as keyof typeof form]}
@@ -160,12 +194,12 @@ export function CTASection({ darkMode }: CTASectionProps) {
                     </div>
                   ))}
                 </div>
-
                 <div>
                   <label className={`mb-2 block text-xs font-semibold uppercase tracking-[0.2em] ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
                     Ask your inquiry
                   </label>
                   <textarea
+                    name="message"
                     required
                     placeholder="Ask your questions. We’d love to answer your questions."
                     value={form.project}
