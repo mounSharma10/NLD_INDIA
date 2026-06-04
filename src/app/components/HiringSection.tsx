@@ -92,7 +92,7 @@ export function HiringSection({ darkMode }: HiringSectionProps) {
       </div>
 
       <div ref={ref} className="relative mx-auto max-w-7xl">
-        <div className="mb-16 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <div className="mb-16 text-center">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -123,7 +123,7 @@ export function HiringSection({ darkMode }: HiringSectionProps) {
             </motion.h2>
           </div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.16 }}
@@ -136,7 +136,7 @@ export function HiringSection({ darkMode }: HiringSectionProps) {
               The process is built to respect candidate time while still giving us a deep read on craft, mindset, and
               team fit.
             </p>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">

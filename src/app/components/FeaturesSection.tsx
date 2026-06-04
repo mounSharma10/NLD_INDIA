@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
-import { BriefcaseBusiness, Building2, Globe2, Users } from "lucide-react";
+import { BriefcaseBusiness, Building2, Globe2, Users,Handshake  } from "lucide-react";
 
 interface FeaturesSectionProps {
   darkMode: boolean;
@@ -14,13 +14,7 @@ const companyHighlights = [
     desc: "From a promising startup to a well-structured IT solutions company.",
     gradient: "from-violet-600 to-blue-600",
   },
-  {
-    icon: Users,
-    label: "Team Strength",
-    value: "20+ Professionals",
-    desc: "A collaborative team focused on quality delivery and balanced growth.",
-    gradient: "from-blue-600 to-cyan-500",
-  },
+
   {
     icon: Globe2,
     label: "Global Reach",
@@ -34,6 +28,13 @@ const companyHighlights = [
     value: "Zirakpur, Mohali",
     desc: "Powered by the strong technical talent pool of the Tricity region.",
     gradient: "from-emerald-500 to-teal-500",
+  },
+    {
+    icon: Handshake ,
+    label: "Team Culture",
+    value: "People First",
+    desc: "A supportive environment that encourages teamwork, innovation, and continuous learning.",
+    gradient: "from-blue-600 to-cyan-500",
   },
 ];
 
@@ -81,14 +82,14 @@ export function FeaturesSection({ darkMode }: FeaturesSectionProps) {
             </span>
           </motion.h2>
 
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
             className={`text-lg max-w-3xl mx-auto ${darkMode ? "text-gray-400" : "text-gray-500"}`}
           >
             A refined introduction to NLD India Software Pvt. Ltd., our growth story, and the value we bring to clients around the world.
-          </motion.p>
+          </motion.p> */}
         </div>
 
         <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-8 items-start">

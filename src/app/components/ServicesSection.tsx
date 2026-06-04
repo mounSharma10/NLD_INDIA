@@ -99,7 +99,7 @@ export function ServicesSection({ darkMode }: ServicesSectionProps) {
       <div className="relative mx-auto max-w-7xl">
         <div
           ref={headerRef}
-          className="mb-16 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end"
+          className="mb-16 text-center"
         >
           <div>
             <motion.div
@@ -131,7 +131,7 @@ export function ServicesSection({ darkMode }: ServicesSectionProps) {
             </motion.h2>
           </div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.16 }}
@@ -144,7 +144,7 @@ export function ServicesSection({ darkMode }: ServicesSectionProps) {
               and more valuable than a standard agency build. The goal is not just shipping features. It is building
               product confidence.
             </p>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -158,8 +158,8 @@ export function ServicesSection({ darkMode }: ServicesSectionProps) {
             />
           ))}
         </div>
-
-        <div
+{/* comment */}
+        {/* <div
           className={`mt-16 rounded-[32px] border p-6 md:p-8 ${
             darkMode ? "border-white/10 bg-white/[0.03]" : "border-slate-200 bg-white/80 shadow-sm"
           }`}
@@ -206,7 +206,7 @@ export function ServicesSection({ darkMode }: ServicesSectionProps) {
               />
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
@@ -280,7 +280,8 @@ function ServiceCard({
                   : "bg-slate-100 text-slate-500 group-hover:bg-slate-900 group-hover:text-white"
             }`}
           >
-            {status === "upcoming" ? <Sparkles size={17} /> : <ArrowUpRight size={17} />}
+            {/* {status === "upcoming" ? <ArrowUpRight size={17} /> : <Sparkles size={17} /> } */}
+             <Sparkles size={17} />
           </div>
         </div>
 

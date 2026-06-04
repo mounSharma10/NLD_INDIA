@@ -113,14 +113,14 @@ export function TechStackSection({ darkMode }: TechStackSectionProps) {
             </span>
           </motion.h2>
 
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.18, duration: 0.55 }}
             className={`mx-auto max-w-2xl text-lg ${darkMode ? "text-gray-400" : "text-gray-500"}`}
           >
             We stay on the cutting edge - handpicking the right tools to build fast, reliable, and scalable products.
-          </motion.p>
+          </motion.p> */}
         </div>
 
         <motion.div
