@@ -119,7 +119,7 @@ export function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
                 onClick={() => handleNav("#cta")}
                 className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 text-white text-sm font-semibold shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all duration-300"
               >
-                Get Started
+                Contact
               </motion.button>
 
               <motion.button
@@ -170,7 +170,7 @@ export function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
                 onClick={() => handleNav("#cta")}
                 className="mt-2 px-4 py-3 rounded-xl bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500 text-white text-sm font-semibold"
               >
-                Get Started
+                Contact
               </button>
             </div>
           </motion.div>
