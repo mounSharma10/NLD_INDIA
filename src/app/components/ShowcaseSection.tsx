@@ -8,14 +8,14 @@ interface ShowcaseSectionProps {
 
 const projects = [
   {
-    id: "fluentia",
-    name: "Fluentia",
+    id: "lm",
+    name: "Logistics",
     tagline: "Logistics Document & Customs Platform",
     icon: Ship,
     category: "Logistics · Web Platform",
     gradient: "from-violet-400 via-blue-400 to-cyan-300",
     description:
-      "A modern logistics intelligence platform that transforms trade and customs documents into validated, structured, and actionable data. Fluentia combines AI-powered automation, secure processing, and enterprise-grade integrations for international operations.",
+      "A modern logistics intelligence platform that transforms trade and customs documents into validated, structured, and actionable data. Combines AI-powered automation, secure processing, and enterprise-grade integrations for international operations.",
     chips: ["Web Platform", "Logistics", "Automation", "Customs"],
     points: [
       {
@@ -40,7 +40,7 @@ const projects = [
     category: "AI · Data Extraction",
     gradient: "from-cyan-300 via-sky-400 to-blue-500",
     description:
-      "An AI-driven processing engine built to convert unstructured business documents into reliable structured data. Capture Platform reduces manual effort, improves speed, and creates integration-ready outputs for enterprise systems.",
+      "An AI-driven processing engine built to convert unstructured business documents into reliable structured data. Reduces manual effort, improves speed, and creates integration-ready outputs for enterprise systems.",
     chips: ["AI Extraction", "OCR", "Invoices", "Automation"],
     points: [
       {
@@ -58,14 +58,14 @@ const projects = [
     ],
   },
   {
-    id: "docuvibes",
-    name: "DocuVibes",
-    tagline: "Enterprise Document Management System",
+    id: "dm",
+    name: "DMS",
+    tagline: "Enterprise Document Management",
     icon: FolderOpen,
     category: "Enterprise · DMS",
     gradient: "from-emerald-300 via-cyan-300 to-sky-400",
     description:
-      "A refined document management environment built for businesses that need secure organization, smart retrieval, and modern operational visibility. DocuVibes brings structure and usability to document-heavy enterprise teams.",
+      "A refined document management environment built for businesses that need secure organization, smart retrieval, and modern operational visibility. Brings structure and usability to document-heavy enterprise teams.",
     chips: ["DMS", "Enterprise", "Permissions", "Search"],
     points: [
       {
@@ -78,14 +78,14 @@ const projects = [
       },
       {
         label: "Cross-System Accessibility",
-        detail: "Connects documents with surrounding enterprise systems so teams work from one dependable source.",
+        detail: "Connect documents with surrounding enterprise systems so teams work from one dependable source.",
       },
     ],
   },
   {
-    id: "clearport",
-    name: "ClearPort",
-    tagline: "Container Vessel Document Processing",
+    id: "cm",
+    name: "Container",
+    tagline: "Container Operations",
     icon: Anchor,
     category: "Logistics · Document Processing",
     gradient: "from-emerald-400 via-teal-400 to-cyan-300",
@@ -108,14 +108,14 @@ const projects = [
     ],
   },
   {
-    id: "orion",
-    name: "Orion",
+    id: "om",
+    name: "OMS",
     tagline: "Order Management System",
     icon: Package,
     category: "E-Commerce · OMS",
     gradient: "from-blue-400 via-cyan-300 to-violet-400",
     description:
-      "A robust order management product designed to keep businesses synchronized across webshops and fulfillment partners. Orion minimizes manual effort and creates a cleaner, more automated order lifecycle.",
+      "A robust order management product designed to keep businesses synchronized across webshops and fulfillment partners. Minimizes manual effort and creates a cleaner, more automated order lifecycle.",
     chips: ["OMS", "E-Commerce", "Real-time Sync", "Fulfillment"],
     points: [
       {
@@ -133,9 +133,9 @@ const projects = [
     ],
   },
   {
-    id: "posis",
-    name: "Posis",
-    tagline: "Smart Point-of-Sale System",
+    id: "pos",
+    name: "POS",
+    tagline: "Smart POS System",
     icon: ShoppingCart,
     category: "Retail · POS",
     gradient: "from-indigo-400 via-violet-400 to-pink-400",
@@ -158,9 +158,9 @@ const projects = [
     ],
   },
   {
-    id: "immotion",
-    name: "Immotion",
-    tagline: "Intelligent Email Processing System",
+    id: "ep",
+    name: "Email Processing",
+    tagline: "Email Processing System",
     icon: Mail,
     category: "Automation · Email AI",
     gradient: "from-pink-400 via-rose-400 to-orange-300",

@@ -257,14 +257,14 @@ function ServiceCard({
               <Icon size={20} className="text-white" />
             </div>
             <div>
-              <div className={`text-xs font-semibold uppercase tracking-[0.26em] ${darkMode ? "text-slate-500" : "text-slate-400"}`}>
+              {/* <div className={`text-xs font-semibold uppercase tracking-[0.26em] ${darkMode ? "text-slate-500" : "text-slate-400"}`}>
                 {service.category}
-              </div>
+              </div> */}
               <div
                 className={`mt-1 text-2xl font-black text-transparent bg-gradient-to-r ${service.gradient} bg-clip-text`}
                 style={{ fontFamily: "'Space Grotesk', 'Manrope', sans-serif" }}
               >
-                {service.number}
+                {service.category}
               </div>
             </div>
           </div>
