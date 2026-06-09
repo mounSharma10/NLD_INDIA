@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { ArrowRight, Braces, Cpu, Database, Play, Workflow } from "lucide-react";
+import { ArrowRight, Braces, Cpu, Database, Play, Workflow , GitBranch , Code2, ShieldCheck} from "lucide-react";
 import logoImage from "../assets/logo_final 1.png";
 
 interface HeroProps {
@@ -22,10 +22,15 @@ const floatingDots = [
 ];
 
 const techOrbitItems = [
-  { icon: Workflow, left: "8%", top: "24%", delay: 0.2 },
-  { icon: Braces, left: "84%", top: "18%", delay: 0.6 },
-  { icon: Cpu, left: "86%", top: "64%", delay: 0.4 },
-  { icon: Database, left: "12%", top: "68%", delay: 0.8 },
+{ icon: Workflow, left: "10%", top: "22%", delay: 0.2 },
+  { icon: Database, left: "5%", top: "46%", delay: 0.4 },
+  { icon: Code2, left: "14%", top: "70%", delay: 0.6 },
+
+  // RIGHT SIDE
+  { icon: GitBranch, left: "84%", top: "18%", delay: 0.3 },
+  { icon: ShieldCheck, left: "88%", top: "40%", delay: 0.5 },
+  // { icon: Database, left: "86%", top: "62%", delay: 0.7 },
+  { icon: GitBranch, left: "86%", top: "62%", delay: 0.9 },
 ];
 
 export function HeroSection({ darkMode }: HeroProps) {
@@ -164,7 +169,7 @@ export function HeroSection({ darkMode }: HeroProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-4xl flex items-center justify-center ">
-            <img src={logoImage} alt="NLD India logo" className=" object-contain h-35 sm:h-36 md:h-44 lg:h-56 xl:h-64 2xl:h-72 w-auto " />
+            <img src={logoImage} alt="NLD India logo" className=" object-contain h-40 sm:h-40 md:h-48 lg:h-60 xl:h-68 2xl:h-80 w-auto " />
           </motion.div>
           <motion.h4
             initial={{ opacity: 0, y: 30 }}
@@ -179,7 +184,7 @@ export function HeroSection({ darkMode }: HeroProps) {
             </span> */}
           </motion.h4>
 
-          <motion.div
+          <motion.div 
             initial={{ opacity: 0, scaleX: 0.7 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 0.7, delay: 0.18 }}
@@ -189,19 +194,20 @@ export function HeroSection({ darkMode }: HeroProps) {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.24 }}
+             style={{ fontFamily: "'Space Grotesk', 'Manrope', sans-serif" }}
             className={`  mx-auto mt-4 sm:mt-6 max-w-xs sm:max-w-2xl lg:max-w-4xl text-sm sm:text-base md:text-lg lg:text-[1.05rem] leading-7 sm:leading-8 md:leading-9 px-4 sm:px-6 lg:px-0 
               ${darkMode            
                ? "text-slate-300"             
                : "text-slate-600" } `} >
-            <span
+            {/* <span
               className={
                 darkMode
                   ? "font-bold text-white"
                   : "font-bold text-slate-900"
               }
             >
+            </span>{" "} */}
               Empowering global organizations
-            </span>{" "}
             to achieve sustainable growth through innovative software
             solutions that streamline business processes and enhance
             operational efficiency.
@@ -223,7 +229,7 @@ export function HeroSection({ darkMode }: HeroProps) {
               <ArrowRight size={18} />
             </motion.button> */}
 
-            <motion.button
+            {/* <motion.button
               whileHover={{ y: -2, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={scrollToServices}
@@ -239,7 +245,7 @@ export function HeroSection({ darkMode }: HeroProps) {
                 <Play size={12} className={darkMode ? "fill-white text-white" : "fill-slate-700 text-slate-700"} />
               </span>
               See Our Work
-            </motion.button>
+            </motion.button> */}
           </motion.div>
         </motion.div>
 

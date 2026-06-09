@@ -84,8 +84,8 @@ const projects = [
   },
   {
     id: "cm",
-    name: "Container",
-    tagline: "Container Operations",
+    name: "Shipment",
+    tagline: "Shipment Operations",
     icon: Anchor,
     category: "Logistics · Document Processing",
     gradient: "from-emerald-400 via-teal-400 to-cyan-300",
@@ -134,7 +134,7 @@ const projects = [
   },
   {
     id: "pos",
-    name: "POS",
+    name: "POS Reporting",
     tagline: "Smart POS System",
     icon: ShoppingCart,
     category: "Retail · POS",
@@ -236,7 +236,7 @@ export function ShowcaseSection({ darkMode }: ShowcaseSectionProps) {
           >
             Products We{" "}
             <span className="bg-gradient-to-r from-cyan-300 via-sky-300 to-violet-400 bg-clip-text text-transparent">
-              Built
+              Build
             </span>
           </motion.h2>
 
@@ -397,23 +397,18 @@ export function ShowcaseSection({ darkMode }: ShowcaseSectionProps) {
                 </div>
 
                 <div className="relative p-7 md:p-10 lg:p-12">
-                  <div className="mb-8 flex items-center justify-between gap-4">
+                  {/* <div className="mb-8 flex items-center justify-between gap-4">
                     <div>
                       <div className={`text-[11px] font-semibold uppercase tracking-[0.28em] ${darkMode ? "text-slate-500" : "text-slate-400"}`}>
                         Key Capabilities
                       </div>
-                      {/* <h4
-                        className={`mt-3 text-2xl font-black tracking-[-0.03em] ${darkMode ? "text-white" : "text-slate-950"}`}
-                        style={{ fontFamily: "'Space Grotesk', 'Manrope', sans-serif" }}
-                      >
-                        Connected product intelligence.
-                      </h4> */}
+                
                     </div>
 
                     <div className={`hidden rounded-2xl p-3 md:flex ${darkMode ? "bg-white/[0.05] text-cyan-200" : "bg-cyan-50 text-cyan-700"}`}>
                       <Workflow size={20} />
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="space-y-5">
                     {project.points.map((point, index) => (

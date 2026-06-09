@@ -56,12 +56,12 @@ export function Navbar({ darkMode, toggleDarkMode }: NavbarProps) {
               whileHover={{ scale: 1.02 }}
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
-                <img src={logoImage} alt="NLD India logo" className=" object-contain w-11 h-11" />
+                <img src={logoImage} alt="NLD India logo" className=" object-contain w-13 h-13" />
               {/* <div className="relative w-11 h-11 rounded-2xl overflow-hidden bg-white/5 ring-1 ring-white/10 shadow-lg shadow-cyan-500/20">
               </div> */}
               <div>
                 <span
-                  className={`font-bold text-base tracking-tight ${darkMode ? "text-white" : "text-slate-900"} mx-auto  mt-4 sm:mt-6  max-w-xs sm:max-w-2xl lg:max-w-4xl  text-sm sm:text-base md:text-lg lg:text-[1.05rem]  leading-7 sm:leading-8 md:leading-9`}
+                  className={`font-bold text-base tracking-tight ${darkMode ? "text-white" : "text-slate-900"} mx-auto  mt-4 sm:mt-6  max-w-xs sm:max-w-2xl lg:max-w-4xl  text-sm sm:text-base md:text-lg lg:text-[1.25rem]  leading-7 sm:leading-8 md:leading-9`}
                   style={{ fontFamily: "'Space Grotesk', 'Manrope', sans-serif" }}
                 >
                  NLD India Software Pvt Ltd

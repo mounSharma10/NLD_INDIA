@@ -22,7 +22,7 @@ const services = [
     icon: Brain,
     title: "AI Products",
     category: "Intelligence",
-    desc: "AI copilots, workflow automation, retrieval systems, and internal tools that turn complex operations into simple actions.",
+    desc: "Retrieval systems, Workflow automation, AI copilots and internal tools that turn complex operations into simple actions.",
     tags: ["OpenAI", "Python", "RAG", "Automation"],
     gradient: "from-emerald-500 via-teal-500 to-cyan-500",
     accent: "rgba(16,185,129,0.16)",
@@ -124,9 +124,9 @@ export function ServicesSection({ darkMode }: ServicesSectionProps) {
               }`}
               style={{ fontFamily: "'Space Grotesk', 'Manrope', sans-serif" }}
             >
-              Systems for brands
+             Transforming ambitious ideas 
               <span className="block bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">
-                that want modern gravity.
+                into exceptional digital products.
               </span>
             </motion.h2>
           </div>
@@ -305,7 +305,7 @@ function ServiceCard({
           </div>
         ) : null}
 
-        <div className="flex flex-wrap gap-2">
+        {/* <div className="flex flex-wrap gap-2">
           {service.tags.map((tag) => (
             <span
               key={tag}
@@ -316,7 +316,7 @@ function ServiceCard({
               {tag}
             </span>
           ))}
-        </div>
+        </div> */}
       </div>
     </motion.div>
   );

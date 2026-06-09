@@ -1,6 +1,6 @@
 import { FormEvent, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
-import { ArrowRight, CheckCircle, Mail, MapPin, Phone, Send, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle, Mail, MapPin, Phone, Send, Sparkles, Building2 } from "lucide-react";
 
 interface CTASectionProps {
   darkMode: boolean;
@@ -9,7 +9,13 @@ interface CTASectionProps {
 const contactCards = [
   { icon: Mail, title: "Email", value: "p.bhalla@nldinternational.com" },
   { icon: Phone, title: "Phone", value: "+01762 459 012" },
-  { icon: MapPin, title: "Location", value: " First Floor, Royale Estate Complex, Sco 40, near Oxford Street, Zirakpur, Punjab 140603" },
+  { icon: MapPin, title: "Location", value: " Sco 40, First Floor, Royale Estate Complex,near Oxford Street, Zirakpur, Mohali, Punjab 140603, India" },
+  {
+  icon: Building2,
+  title: "Office",
+  value: "NLD India Software pvt. ltd.",
+  link: "https://maps.app.goo.gl/5kwJBVJECccWETDYA"
+}
 ];  
 
 export function CTASection({ darkMode }: CTASectionProps) {
@@ -102,7 +108,7 @@ export function CTASection({ darkMode }: CTASectionProps) {
             }`}
             style={{ fontFamily: "'Space Grotesk', 'Manrope', sans-serif" }}
           >
-            Ask your inquiry.
+            {/* Ask your inquiry. */}
             {/* <span className="block bg-gradient-to-r from-sky-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">
               of your product.
             </span> */}
@@ -140,7 +146,7 @@ export function CTASection({ darkMode }: CTASectionProps) {
                   className={`text-3xl font-bold ${darkMode ? "text-white" : "text-slate-950"}`}
                   style={{ fontFamily: "'Space Grotesk', 'Manrope', sans-serif" }}
                 >
-                  Message received
+                  Message Sent
                 </h3>
                 <p className={`mt-3 max-w-md text-sm leading-7 ${darkMode ? "text-slate-300" : "text-slate-600"}`}>
                   We&apos;ll review your note and respond with next steps, recommended scope, and a likely timeline.
@@ -148,6 +154,16 @@ export function CTASection({ darkMode }: CTASectionProps) {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                  <input
+                    type="hidden"
+                    name="subject"
+                    value="NLD India Inquiry"
+                  />
+                    <input
+                    type="hidden"
+                    name="from_name"
+                    value="NLD India Website"
+                  />
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <h3
@@ -160,19 +176,19 @@ export function CTASection({ darkMode }: CTASectionProps) {
                       A few details are enough to start the conversation.
                     </p>
                   </div>
-                  <div
+                  {/* <div
                     className={`hidden rounded-2xl px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] md:block ${
                       darkMode ? "bg-white/8 text-slate-300" : "bg-slate-100 text-slate-600"
                     }`}
                   >
                     24h reply
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="grid gap-4 md:grid-cols-2">
                   {[
-                    { key: "name", label: "Your Name", placeholder: "Monu Sharma", type: "text" , name: true},
-                    { key: "email", label: "Email Address", placeholder: "monu@company.com", type: "email" , email: true},
+                    { key: "name", label: "Your Name", placeholder: "Enter your name", type: "text" , name: true},
+                    { key: "email", label: "Email Address", placeholder: "Enter your email", type: "email" , email: true},
                   ].map((field) => (
                     <div key={field.key}>
                       <label className={`mb-2 block text-xs font-semibold uppercase tracking-[0.2em] ${darkMode ? "text-slate-400" : "text-slate-500"}`}>
@@ -237,30 +253,66 @@ export function CTASection({ darkMode }: CTASectionProps) {
             {contactCards.map((contact, index) => {
               const Icon = contact.icon;
               return (
-                <motion.div
-                  key={contact.title}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.45 + index * 0.08 }}
-                  whileHover={{ x: 4 }}
-                  className={`flex items-center gap-4 rounded-[26px] border p-5 ${
-                    darkMode
-                      ? "border-white/10 bg-white/[0.04] hover:border-white/18"
-                      : "border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm"
-                  }`}
-                >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 via-cyan-500 to-emerald-500 shadow-lg">
-                    <Icon size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <div className={`text-xs font-semibold uppercase tracking-[0.2em] ${darkMode ? "text-slate-500" : "text-slate-400"}`}>
-                      {contact.title}
-                    </div>
-                    <div className={`mt-1 text-sm font-semibold ${darkMode ? "text-white" : "text-slate-900"}`}>
-                      {contact.value}
-                    </div>
-                  </div>
-                </motion.div>
+             <motion.div
+  key={contact.title}
+  initial={{ opacity: 0, x: 20 }}
+  animate={inView ? { opacity: 1, x: 0 } : {}}
+  transition={{ delay: 0.45 + index * 0.08 }}
+  whileHover={{ x: 4 }}
+  className={`flex items-center gap-4 rounded-[26px] border p-5 ${
+    darkMode
+      ? "border-white/10 bg-white/[0.04] hover:border-white/18"
+      : "border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm"
+  }`}
+>
+  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-500 via-cyan-500 to-emerald-500 shadow-lg">
+    <Icon size={20} className="text-white" />
+  </div>
+
+  <div className="flex-1">
+    <div
+      className={`text-xs font-semibold uppercase tracking-[0.2em] ${
+        darkMode ? "text-slate-500" : "text-slate-400"
+      }`}
+    >
+      {contact.title}
+    </div>
+
+    {contact.link ? (
+      <>
+        <a
+          href={contact.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`mt-1 block text-sm font-semibold transition-colors hover:text-cyan-500 ${
+            darkMode ? "text-white" : "text-slate-900"
+          }`}
+        >
+          {contact.value}
+        </a>
+
+        {contact.title === "Location" && (
+          <a
+            href={contact.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-cyan-500 hover:text-cyan-400"
+          >
+            View on Map →
+          </a>
+        )}
+      </>
+    ) : (
+      <div
+        className={`mt-1 text-sm font-semibold ${
+          darkMode ? "text-white" : "text-slate-900"
+        }`}
+      >
+        {contact.value}
+      </div>
+    )}
+  </div>
+</motion.div>
               );
             })}
           </motion.div>

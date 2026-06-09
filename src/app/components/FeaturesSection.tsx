@@ -11,7 +11,7 @@ const companyHighlights = [
     icon: BriefcaseBusiness,
     label: "Founded",
     value: "In 2023",
-    desc: "From a promising startup to a well-structured IT solutions company.",
+    desc: "From a promising startup to a well-structured IT solutions company now.",
     gradient: "from-violet-600 to-blue-600",
   },
 
@@ -19,21 +19,21 @@ const companyHighlights = [
     icon: Globe2,
     label: "Global Reach",
     value: "Worldwide Clients",
-    desc: "Custom software solutions built for modern businesses across industries.",
+    desc: "Custom software solutions built for modern businesses across the globe.",
     gradient: "from-cyan-500 to-emerald-500",
   },
   {
     icon: Building2,
     label: "Headquartered",
     value: "Zirakpur, Mohali",
-    desc: "Powered by the strong technical talent pool of the Tricity region.",
+    desc: "Powered by the strong technical talent pool of the Tricity Chandigarh region.",
     gradient: "from-emerald-500 to-teal-500",
   },
     {
     icon: Handshake ,
     label: "Team Culture",
     value: "People First",
-    desc: "A supportive environment that encourages teamwork, innovation, and continuous learning.",
+    desc: "A supportive environment that encourages teamwork, innovation, and learning.",
     gradient: "from-blue-600 to-cyan-500",
   },
 ];
@@ -108,16 +108,16 @@ export function FeaturesSection({ darkMode }: FeaturesSectionProps) {
 
             <div className="space-y-6">
               <p className={`text-base md:text-lg leading-8 ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
-                <span className={darkMode ? "text-white font-semibold" : "text-gray-900 font-semibold"}>NLD India Software Pvt. Ltd.</span> has steadily evolved from a promising startup into a growing and well-structured IT solutions company. the company has established streamlined workflows and a collaborative work culture that emphasizes both high-quality software delivery and a healthy work-life balance.
+                <span className={darkMode ? "text-white font-semibold" : "text-gray-900 font-semibold"}>NLD India Software Pvt. Ltd.</span> has steadily evolved from a promising startup into a growing and well-structured IT solutions company. The company has established streamlined workflows and a collaborative work culture that emphasizes both high-quality software delivery and a healthy work-life balance.
               </p>
 
               <p className={`text-base md:text-lg leading-8 ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
-                As a subsidiary of <span className={darkMode ? "text-white font-semibold" : "text-gray-900 font-semibold"}>Next Level Development International BV, the Netherlands</span>, we design innovative and customized software solutions for clients across the globe, serving a wide range of industries. By leveraging the strong technical talent pool of the Tricity region, we continue to expand our capabilities while staying focused on innovation, quality, reliability, and client satisfaction.
+                As a subsidiary of <span className={darkMode ? "text-white font-semibold" : "text-gray-900 font-semibold"}>Next Level Development International BV, the Netherlands</span>, we design innovative and customized software solutions for clients across the globe, serving a wide range of industries. By leveraging the strong technical talent pool of the Tricity Chandigarh region, we continue to expand our capabilities while staying focused on innovation, quality, reliability, and client satisfaction.
               </p>
 
-              <p className={`text-base md:text-lg leading-8 ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
+              {/* <p className={`text-base md:text-lg leading-8 ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
                 With a growing international presence and an expanding project portfolio, we deliver state-of-the-art IT solutions that align with modern business needs and global quality standards.
-              </p>
+              </p> */}
             </div>
           </motion.div>
 
@@ -137,14 +137,14 @@ export function FeaturesSection({ darkMode }: FeaturesSectionProps) {
                       : "bg-white border-gray-100 hover:border-gray-200 shadow-sm"
                     }`}
                 >
-                  <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg mb-5`}>
+                  <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg mb-4`}>
                     <Icon size={22} className="text-white" />
                   </div>
                   <div className={`text-xs font-bold tracking-[0.2em] uppercase mb-2 ${darkMode ? "text-gray-500" : "text-gray-400"}`}>
                     {item.label}
                   </div>
-                  <h3 className={`text-xl font-bold mb-3 ${darkMode ? "text-white" : "text-gray-900"}`}>{item.value}</h3>
-                  <p className={`text-sm leading-7 ${darkMode ? "text-gray-400" : "text-gray-500"}`}>{item.desc}</p>
+                  <h3 className={`text-xl font-bold mb-2 ${darkMode ? "text-white" : "text-gray-900"}`}>{item.value}</h3>
+                  <p className={`text-sm leading-6  ${darkMode ? "text-gray-400" : "text-gray-500"}`}>{item.desc}</p>
                 </motion.div>
               );
             })}
