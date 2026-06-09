@@ -30,7 +30,7 @@ const techOrbitItems = [
   { icon: GitBranch, left: "84%", top: "18%", delay: 0.3 },
   { icon: ShieldCheck, left: "88%", top: "40%", delay: 0.5 },
   // { icon: Database, left: "86%", top: "62%", delay: 0.7 },
-  { icon: GitBranch, left: "86%", top: "62%", delay: 0.9 },
+  { icon: Braces, left: "86%", top: "62%", delay: 0.9 },
 ];
 
 export function HeroSection({ darkMode }: HeroProps) {
